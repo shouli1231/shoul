@@ -63,45 +63,26 @@ void displayFrontier(priority_queue<Path, vector<Path>,
 
 int main()
 {
-  Node* S = new Node('S');
+  Node* s = new Node('s');
   Node* a = new Node('a');
   Node* b = new Node('b');
   Node* c = new Node('c');
-  Node* d = new Node('d');
-  Node* e = new Node('e');
-  Node* f = new Node('f');
-  Node* h = new Node('h');
-  Node* p = new Node('p');
-  Node* q = new Node('q');
-  Node* r = new Node('r');
-  Node* G = new Node('G');
+  Node* g = new Node('g');
 
-  S->connectsTo(d, 3);
-  S->connectsTo(e, 9);
-  S->connectsTo(p, 1);
 
-  b->connectsTo(a, 2);
+  s->connectsTo(a, 1);
 
-  c->connectsTo(a, 2);
+  s->connectsTo(b, 4);
 
-  d->connectsTo(b, 1);
-  d->connectsTo(c, 8);
-  d->connectsTo(e, 2);
+  a->connectsTo(b, 3);
+  b->connectsTo(c, 8);
+  a->connectsTo(c, 6);
 
-  e->connectsTo(h, 8);
-  e->connectsTo(r, 2);
+  c->connectsTo(g, 10);
+  a->connectsTo(g, 7);
 
-  f->connectsTo(c, 3);
-  f->connectsTo(G, 2);
 
-  h->connectsTo(p, 4);
-  h->connectsTo(q, 4);
-
-  p->connectsTo(q, 15);
-
-  r->connectsTo(f, 1);
-
-  UCS(S, G);
+  UCS(s, g);
 }
 
 void UCS(Node* start, Node* goal)
